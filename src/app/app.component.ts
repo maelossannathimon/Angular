@@ -1,6 +1,6 @@
 import { JsonPipe } from '@angular/common';
 import { compileNgModule } from '@angular/compiler';
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ItemListComponent } from './item-list/item-list.component';
 
@@ -59,3 +59,55 @@ export interface Studente{
   matricola: number,
   attivo: boolean
 }
+
+
+/**
+ *Con quali dati lavoriamo?
+ *Come li strutturiamo?
+ *Architettura progetto?
+ *1) post
+ * -titolo
+ * -descrizione
+ * -ID post
+ * -userID
+ * 2) interfaccia
+ * 3) cartella backend chiamta 'core'
+ * 4)core/model invece per la struttura dei dati
+ *
+ *
+ *
+ */
+//WriteableSignal<string>
+
+postlist: Post[] = [
+titolo: " Seconda lezione "
+body: "Imparimo a strutturae i progetti"
+id: 0
+userId: 34567
+]
+nome: string = 'Pietro'
+
+cognome = signal<string>('rocchio');
+counter = signal<number>(0);
+
+rinominaCognome(){
+  this.cognome.set('Rossi')
+}
+
+incrementa(){
+  this.counter.update(val => val+1);
+}
+
+genratePost(){
+  this.postList.update(item => {
+    [...item,{
+      titolo:
+      body:
+      id: 0,
+      userId: Math.random() * 100,
+    }]
+  });
+}
+
+
+//69

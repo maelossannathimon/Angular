@@ -58,3 +58,18 @@
   <app-item-list [studente]="std"></app-item-list>
 }
 </ul>
+
+@for (post of postlist; track post.id) {
+<div clas="post">
+  <h1> {{post.titolo}}
+    <p>
+      <div>
+        <p>
+
+        </p>
+      </div>
+    </p>
+  </h1>
+</div>
+
+}
